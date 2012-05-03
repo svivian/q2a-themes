@@ -784,7 +784,7 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 	.qa-q-view-hidden .qa-category-link {color:#999;}
 	.qa-q-view-hidden .qa-tag-link {background-color:#ccc;}
 
-/* Answer view  */
+/* Answer view */
 
 .qa-a-list-item {margin-bottom:40px; zoom:1; padding-bottom:1px;} /* zoom for IE, padding for early FF */
 .qa-a-list-item-hidden {}

@@ -6,6 +6,7 @@ This repository contains all public themes I create. Most are licensed under GPL
 
 The `Advanced-Mods` folder contains snippets of code modifying the layout/content of a theme that I hope will be useful.
 
+
 Current themes
 -------------------------------------------------
 
