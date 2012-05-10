@@ -21,7 +21,7 @@ body {
 	text-align: center;
 }
 body, td, input, textarea {
-	font-size: 14px;
+	font-size: 13px;
 	line-height: 1.4;
 	font-family: "Ubuntu", "Trebuchet MS", "Helvetica", "Arial", sans-serif;
 }
@@ -34,6 +34,10 @@ a:hover {
 }
 p {
 	margin-top: 0;
+}
+
+table {
+	border-collapse: collapse;
 }
 
 .qa-notice {background:#fdd; border-bottom:2px solid #293d39; color:#b00; font-size:18px; padding:.5em 32px; font-weight:bold; position:relative;}
@@ -99,12 +103,11 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 	padding: 12px;
 	background: #f5e4c3;
 	border: 1px solid #f3c772;
-	font-size: 13px;
 }
 
 .qa-feed {background:url("feed-icon-14x14.png") no-repeat left top; padding-left:20px; height:16px; margin:24px 0;}
 .qa-feed-link {font-size:10px; color:#666;}
-.qa-main {padding-left:20px; float:left; margin-bottom:2em; width:750px; clear:left; overflow:hidden;}
+.qa-main {padding-left:20px; float:left; margin-bottom:2em; width:750px; clear:left;}
 
 .qa-main-hidden {
 	background-color: #f8f8f8;
@@ -352,6 +355,7 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 
 .qa-form-wide-table {
 	width: 100%;
+	border: 0;
 }
 .qa-form-wide-spacer {
 	padding: 0;
@@ -369,21 +373,18 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 }
 .qa-form-wide-label,
 .qa-form-wide-data {
-	border-width: 1px;
-	border-style: solid;
-	border-color: #ebeaca;
+	padding: 5px 8px;
+	border: 1px solid #d7dbbc;
 }
 .qa-form-wide-label {
+	white-space: nowrap; width: 100px;
+	background-color: #f2f2da;
+	border-right-style: dashed;
 	color: #333;
-	padding: 6px 10px;
 	font-weight: bold;
 	text-align: right;
-	white-space: nowrap; width: 100px;
-	background-color: #fafad7;
-	border-right-style: dashed;
 }
 .qa-form-wide-data {
-	padding: 6px 10px;
 	border-left-style: dashed;
 }
 .qa-form-wide-text,
@@ -391,7 +392,7 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 	padding: 3px;
 }
 .qa-form-wide-text {
-	width: 320px;
+	width: 90%;
 	border: 1px solid #658296;
 }
 .qa-form-wide-number {
@@ -689,7 +690,6 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 
 .qa-top-tags-table {
 	float: left;
-	border-collapse: collapse;
 	margin-bottom: 1em;
 	width: 100%;
 }
@@ -707,7 +707,6 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 
 .qa-top-users-table {
 	float: left;
-	border-collapse: collapse;
 	margin-bottom: 1em;
 	width: 100%;
 }
@@ -715,7 +714,6 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 .qa-top-users-score {
 	padding: 5px 8px;
 	border: 1px solid #d7dbbc;
-
 }
 .qa-top-users-label {
 	border-right-style: dashed;
@@ -750,7 +748,7 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 	width:680px;
 	margin-left: 10px;
 }
-.qa-q-view-content {margin-bottom:16px;}
+.qa-q-view-content {margin-bottom:16px; font-size:14px;}
 .qa-q-view-avatar {display:inline-block; vertical-align:middle; margin-right:8px;}
 
 .qa-q-view-meta {
@@ -760,10 +758,10 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 	color: #666;
 }
 
-.qa-q-view-follows {font-size:13px; margin-bottom:12px; font-style:italic;}
-.qa-q-view-closed {font-size:13px; margin-bottom:18px; font-style:italic;}
+.qa-q-view-follows {margin-bottom:12px; font-style:italic;}
+.qa-q-view-closed {margin-bottom:18px; font-style:italic;}
 .qa-q-view-closed-content {font-weight:bold;}
-.qa-q-view-extra {font-size:13px; margin-bottom:18px; font-style:italic;}
+.qa-q-view-extra {margin-bottom:18px; font-style:italic;}
 .qa-q-view-extra-content {font-weight:bold;}
 .qa-q-view-when-data {font-weight:bold;}
 .qa-q-view-who-title {font-size:80%; font-weight:bold; color:#900707;}
