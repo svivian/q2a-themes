@@ -46,7 +46,7 @@ class qa_html_theme extends qa_html_theme_base
 		if ( isset($this->content['q_view']['url']) )
 		{
 			$this->content['title'] = '<a href="' . $this->content['q_view']['url'] . '">' . @$this->content['title'] . '</a>';
-			if ( $this->content['q_view']['raw']['closedbyid'] !== null )
+			if ( @$this->content['q_view']['raw']['closedbyid'] !== null )
 				$this->content['title'] .= ' [closed]';
 		}
 
@@ -82,7 +82,7 @@ class qa_html_theme extends qa_html_theme_base
 	function q_item_title($q_item)
 	{
 		// display "closed" message in question list
-		$closed = $q_item['raw']['closedbyid'] !== null;
+		$closed = @$q_item['raw']['closedbyid'] !== null;
 
 		$this->output(
 			'<DIV CLASS="qa-q-item-title">',
