@@ -80,13 +80,42 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 	color: inherit;
 }
 
-.qa-favoriting {float:right; padding-right:48px; padding-top:4px;}
 
-.qa-favorite-button,.qa-favorite-hover,.qa-unfavorite-button,.qa-unfavorite-hover {background:url("favorite-plus.gif") no-repeat; border:0; height:26px; width:26px;}
-	.qa-favorite-button {background-position: 0 -26px;}
-	.qa-favorite-hover,.qa-favorite-button:hover {background-position: 0 0px;}
-	.qa-unfavorite-button {background-position: 0 -52px;}
-	.qa-unfavorite-hover,.qa-unfavorite-button:hover {background-position: 0 0px;}
+.qa-favoriting {
+	float: right;
+	margin: 20px auto 10px;
+	padding-right: 32px;
+	text-align: center;
+}
+
+.qa-favorite-image,
+.qa-favorite-button,
+.qa-favorite-hover,
+.qa-unfavorite-button,
+.qa-unfavorite-hover {
+	width: 30px;
+	height: 28px;
+	background: url("q2a-buttons-1206.png") -48px 0 no-repeat;
+	border: 0;
+}
+
+.qa-favorite-image {
+	display: inline-block;
+	vertical-align: middle;
+}
+.qa-favorite-button {
+	background-position: -48px -28px;
+}
+.qa-favorite-hover,
+.qa-favorite-button:hover {
+	cursor: pointer;
+}
+.qa-unfavorite-hover,
+.qa-unfavorite-button:hover {
+	background-position: -48px -28px;
+	cursor: pointer;
+}
+
 
 .qa-error {background:#fee; border:1px solid #c00; color:#c00; font-size:16px; padding:.5em; margin-bottom:1em; font-weight:bold;}
 	.qa-error a {color:#900; text-decoration:underline;}
@@ -504,7 +533,7 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 .qa-voting, .qa-a-count {
 	float: left;
 	width: 56px;
-	height: 42px;
+	/*height: 42px;*/
 	padding: 8px 0;
 	border: 1px solid #e6e4bc;
 	color: #444;
@@ -531,16 +560,17 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 .qa-vote-buttons {
 	height: 20px;
 }
+.qa-vote-buttons+.qa-vote-count+.qa-vote-buttons {
+	margin-top: 10px;
+}
 .qa-vote-first-button,
 .qa-vote-second-button,
 .qa-vote-one-button {
 	display: block;
 	width: 24px;
 	height: 16px;
-	background: transparent url("q2a-buttons-wide.png");
+	background: transparent url("q2a-buttons-1206.png") no-repeat;
 	border: 0;
-	color: transparent;
-	font-size: 1px;
 	cursor: pointer;
 }
 
@@ -552,7 +582,7 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 .qa-vote-second-button,
 .qa-voted-down-button,
 .qa-voted-down-hover {
-	margin: 10px auto 0;
+	margin: 4px auto 0;
 }
 
 .qa-vote-up-button {
@@ -831,35 +861,25 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 	text-align: center;
 	padding: 0px 0px 8px 12px;
 }
-
 .qa-a-select-button,
 .qa-a-select-hover,
 .qa-a-unselect-button,
-.qa-a-unselect-hover {
-	background: url("q2a-buttons-wide.png") no-repeat;
+.qa-a-unselect-hover,
+.qa-a-selected {
+	width: 36px;
+	height: 25px;
+	background: url("q2a-buttons-1206.png") -78px 0 no-repeat;
 	border: 0;
-	height: 28px;
-	width: 30px;
-}
-.qa-a-select-button {
-	background-position: -48px -28px;
-}
-.qa-a-select-hover,
-.qa-a-select-button:hover {
-	background-position: -48px 0;
 	cursor: pointer;
 }
-.qa-a-unselect-button {
-	background-position: -48px 0;
-}
+.qa-a-select-button,
 .qa-a-unselect-hover,
 .qa-a-unselect-button:hover {
-	background-position: -48px -28px;
-	cursor: pointer;
+	background-position: -78px -25px;
 }
-
 .qa-a-selected-text {
 	font-size: 10px;
+	font-weight: bold;
 	display: block;
 	margin-top: 6px;
 }
@@ -939,4 +959,3 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 
 .qa-avatar-image {border:0; vertical-align:middle;}
 .qa-avatar-link,.qa-avatar-link:hover {text-decoration:none;}
-.qa-favorite-image {background:url("favorite-plus.gif") no-repeat; background-position: 0 -26px; border:0; margin:2px; height:26px; width:26px; vertical-align:middle; display:inline-block;}

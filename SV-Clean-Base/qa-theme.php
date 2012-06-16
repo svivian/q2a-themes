@@ -21,6 +21,8 @@
 
 class qa_html_theme extends qa_html_theme_base
 {
+	private $favourite;
+
 	function doctype()
 	{
 		// use standards doctype
@@ -50,8 +52,15 @@ class qa_html_theme extends qa_html_theme_base
 				$this->content['title'] .= ' [closed]';
 		}
 
-		// remove favourite star here (TODO: add it somewhere else)
-// 		unset($this->content['favorite']);
+		// remove favourite star here
+		$this->favourite = @$this->content['favorite'];
+		unset($this->content['favorite']);
+
+		if ( $this->template != 'question' && isset($this->favourite) ) {
+			$this->output('<DIV CLASS="qa-favoriting" '.@$this->favourite['favorite_tags'].'>');
+			$this->favorite_inner_html($this->favourite);
+			$this->output('</DIV>');
+		}
 
 		parent::page_title_error();
 	}
@@ -92,6 +101,34 @@ class qa_html_theme extends qa_html_theme_base
 		);
 	}
 
+	function voting($post)
+	{
+		if (isset($post['vote_view'])) {
+
+			if ( $this->template == 'question' )
+				$this->output('<div style="float:left; width:56px">');
+
+			$this->output('<DIV CLASS="qa-voting '.(($post['vote_view']=='updown') ? 'qa-voting-updown' : 'qa-voting-net').'" '.@$post['vote_tags'].' >');
+			$this->voting_inner_html($post);
+			$this->output('</DIV>');
+
+			if ( $this->template == 'question' )
+			{
+				// add favourite star back
+				if ( $post['raw']['type'] == 'Q' && isset($this->favourite) )
+				{
+					$this->output('<DIV style="text-align:center" '.@$this->favourite['favorite_tags'].'>');
+					$this->favorite_inner_html($this->favourite);
+					$this->output('</DIV>');
+				}
+				$this->view_count($post);
+			}
+
+			if ( $this->template == 'question' )
+				$this->output('</div>');
+		}
+	}
+
 	function voting_inner_html($post)
 	{
 		$this->vote_button_up($post);
@@ -110,13 +147,13 @@ class qa_html_theme extends qa_html_theme_base
 			case 'voted_down_disabled':
 				break;
 			case 'voted_up':
-				$this->post_hover_button($post, 'vote_up_tags', '+', 'qa-vote-one-button qa-voted-up');
+				$this->post_hover_button($post, 'vote_up_tags', '', 'qa-vote-one-button qa-voted-up');
 				break;
 			case 'voted_up_disabled':
 				$this->post_disabled_button($post, 'vote_up_tags', '', 'qa-vote-one-button qa-vote-up');
 				break;
 			case 'enabled':
-				$this->post_hover_button($post, 'vote_up_tags', '+', 'qa-vote-first-button qa-vote-up');
+				$this->post_hover_button($post, 'vote_up_tags', '', 'qa-vote-first-button qa-vote-up');
 				break;
 			default:
 				$this->post_disabled_button($post, 'vote_up_tags', '', 'qa-vote-first-button qa-vote-up');
@@ -136,13 +173,13 @@ class qa_html_theme extends qa_html_theme_base
 			case 'voted_up_disabled':
 				break;
 			case 'voted_down':
-				$this->post_hover_button($post, 'vote_down_tags', '&ndash;', 'qa-vote-one-button qa-voted-down');
+				$this->post_hover_button($post, 'vote_down_tags', '', 'qa-vote-one-button qa-voted-down');
 				break;
 			case 'voted_down_disabled':
 				$this->post_disabled_button($post, 'vote_down_tags', '', 'qa-vote-one-button qa-vote-down');
 				break;
 			case 'enabled':
-				$this->post_hover_button($post, 'vote_down_tags', '&ndash;', 'qa-vote-second-button qa-vote-down');
+				$this->post_hover_button($post, 'vote_down_tags', '', 'qa-vote-second-button qa-vote-down');
 				break;
 			default:
 				$this->post_disabled_button($post, 'vote_down_tags', '', 'qa-vote-second-button qa-vote-down');
