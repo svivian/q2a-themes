@@ -335,7 +335,6 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 }
 .qa-form-tall-number {
 	width: 48px;
-	border: 1px solid #658296;
 }
 .qa-form-tall-checkbox {
 	float: left;
@@ -422,11 +421,9 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 }
 .qa-form-wide-text {
 	width: 90%;
-	border: 1px solid #658296;
 }
 .qa-form-wide-number {
 	width: 48px;
-	border: 1px solid #658296;
 	vertical-align: middle;
 }
 .qa-form-wide-error {
