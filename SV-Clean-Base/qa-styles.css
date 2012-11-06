@@ -18,7 +18,7 @@ body {
 	background: #cfd1c4;
 	margin: 0;
 	padding: 0;
-	text-align: center;
+	/*text-align: center;*/
 }
 body, td, input, textarea {
 	font-size: 13px;
@@ -33,11 +33,12 @@ a:hover {
 	text-decoration: underline;
 }
 p {
-	margin-top: 0;
+	margin: 0 0 1em;
 }
 
 table {
 	border-collapse: collapse;
+	margin: 0 auto 1em;
 }
 
 .qa-notice {background:#fdd; border-bottom:2px solid #293d39; color:#b00; font-size:18px; padding:.5em 32px; font-weight:bold; position:relative;}
@@ -68,11 +69,11 @@ table {
 
 h1 {
 	font-size: 28px;
-	margin: 22px 0;
+	margin: 10px 0 22px;
 }
 h2 {
 	font-size: 16px;
-	padding-top: 12px;
+	/*padding-top: 12px;*/
 	clear: both;
 }
 
@@ -80,6 +81,9 @@ h1 > a:link, h1 > a:visited, h1 > a:hover {
 	color: inherit;
 }
 
+h2, h3, h4, h5, h6 {
+	margin-top: 0;
+}
 
 .qa-favoriting {
 	float: right;

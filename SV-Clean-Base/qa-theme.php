@@ -211,6 +211,43 @@ class qa_html_theme extends qa_html_theme_base
 	function finish() {} // override indentation comment
 
 
+	function post_meta_who($post, $class)
+	{
+		// if ( $post['raw']['type'] != 'C' )
+			// $this->output('<br/>');
+
+		if ( isset($post['who']) )
+		{
+			$this->output('<SPAN CLASS="'.$class.'-who">');
+
+			if (strlen(@$post['who']['prefix']))
+				$this->output('<SPAN CLASS="'.$class.'-who-pad">'.$post['who']['prefix'].'</SPAN>');
+
+			if (isset($post['who']['data']))
+				$this->output('<SPAN CLASS="'.$class.'-who-data">'.$post['who']['data'].'</SPAN>');
+
+			if (isset($post['who']['title']))
+				$this->output('<SPAN CLASS="'.$class.'-who-title">'.$post['who']['title'].'</SPAN>');
+
+			// You can also use $post['level'] to get the author's privilege level (as a string)
+
+			if ( isset($post['who']['points']) && $post['raw']['type'] != 'C' )
+			{
+				$post['who']['points']['prefix']='('.$post['who']['points']['prefix'];
+				$post['who']['points']['suffix']=')'; // remove 'points' text
+
+				// show zero for all negative points
+				$post['who']['points']['data'] = max($post['who']['points']['data'],0);
+				$this->output_split($post['who']['points'], $class.'-who-points');
+			}
+
+			if (strlen(@$post['who']['suffix']))
+				$this->output('<SPAN CLASS="'.$class.'-who-pad">'.$post['who']['suffix'].'</SPAN>');
+
+			$this->output('</SPAN>');
+		}
+	}
+
 
 
 
