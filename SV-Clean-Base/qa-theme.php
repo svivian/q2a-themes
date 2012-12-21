@@ -38,10 +38,10 @@ class qa_html_theme extends qa_html_theme_base
 		parent::head_title();
 	}
 
-	function head_metas()
-	{
-		// remove meta description and meta keywords
-	}
+	// function head_metas()
+	// {
+	// 	// remove meta description and meta keywords
+	// }
 
 	function page_title_error()
 	{
