@@ -153,6 +153,7 @@ class qa_html_theme extends qa_html_theme_base
 				$this->post_disabled_button($post, 'vote_up_tags', '', 'qa-vote-one-button qa-vote-up');
 				break;
 			case 'enabled':
+			case 'up_only':
 				$this->post_hover_button($post, 'vote_up_tags', '', 'qa-vote-first-button qa-vote-up');
 				break;
 			default:
